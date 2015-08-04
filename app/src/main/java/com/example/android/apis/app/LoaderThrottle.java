@@ -396,7 +396,8 @@ public class LoaderThrottle extends Activity {
         // Task we have running to populate the database.
         AsyncTask<Void, Void, Void> mPopulatingTask;
 
-        @Override public void onActivityCreated(Bundle savedInstanceState) {
+        @Override
+        public void onActivityCreated(Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
 
             setEmptyText("No data.  Select 'Populate' to fill with data from Z to A at a rate of 4 per second.");
@@ -417,14 +418,16 @@ public class LoaderThrottle extends Activity {
             getLoaderManager().initLoader(0, null, this);
         }
 
-        @Override public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        @Override
+        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
             menu.add(Menu.NONE, POPULATE_ID, 0, "Populate")
                     .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
             menu.add(Menu.NONE, CLEAR_ID, 0, "Clear")
                     .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         }
 
-        @Override public boolean onOptionsItemSelected(MenuItem item) {
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
             final ContentResolver cr = getActivity().getContentResolver();
 
             switch (item.getItemId()) {
@@ -475,7 +478,8 @@ public class LoaderThrottle extends Activity {
             }
         }
 
-        @Override public void onListItemClick(ListView l, View v, int position, long id) {
+        @Override
+        public void onListItemClick(ListView l, View v, int position, long id) {
             // Insert desired behavior here.
             Log.i(TAG, "Item clicked: " + id);
         }
